@@ -246,6 +246,45 @@ h2 {
   text-decoration: none;
 }
 
+.loader-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+
+    /* L'animation qui fait disparaître le loader */
+    /* duration: 5s | delay: 0s | fill-mode: forwards (pour qu'il reste caché) */
+    animation: fadeOut 0.5s ease-in 5s forwards;
+}
+
+.loader {
+    width: 50px;
+    height: 50px;
+    border: 5px solid #f3f3f3;
+    border-top: 5px solid #ff79da; /* Rose Ohmyfood */
+    border-bottom: 5px solid #9356dc; /* Violet Ohmyfood */
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+/* Animation de rotation du cercle */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Animation pour cacher le loader et le rendre "invisible" aux clics */
+@keyframes fadeOut {
+    from { opacity: 1; visibility: visible; }
+    to { opacity: 0; visibility: hidden; }
+}
+
 /* --- Desktop Layout --- */
 @media (min-width: 992px) {
     .steps-list {
