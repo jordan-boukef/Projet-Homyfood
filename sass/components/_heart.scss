@@ -1,0 +1,31 @@
+@import "../utils/variables";
+
+.heart-container {
+    position: relative;
+    cursor: pointer;
+    font-size: 22px;
+
+    .heart-empty {
+        transition: opacity 0.3s;
+    }
+
+    .heart-full {
+        position: absolute;
+        left: 0;
+        top: 0;
+        opacity: 0;
+        background: linear-gradient($color-primary, $color-secondary);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        transition: opacity 0.4s ease-in-out;
+    }
+
+    &:hover {
+        .heart-full {
+            opacity: 1;
+        }
+        .heart-empty {
+            opacity: 0;
+        }
+    }
+}
